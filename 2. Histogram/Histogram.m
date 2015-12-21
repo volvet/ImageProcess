@@ -1,10 +1,49 @@
 %
 %    Part 2  Histogram
 %
+clear;
+lena = imread('../pic/lena_color.png');
+%imshow(lena);
+%figure();
+%lena = rgb2gray(lena);
+%lenaColor = imread('../pic/lena_color.png');
+%[counts, xs] = imhist(lena);
 
-lena = imread('../pic/lena.jpg');
-lenaColor = imread('../pic/lena_color.png');
-lena2 = rgb2gray(lenaColor);
+[width, height, components] = size(lena);
+subplot(2,2,1), imshow(lena);
+title('original image');
 
-subplot(1,2,1), imhist(lena);
-subplot(1,2,2), imhist(lena2);
+r = lena;
+r(:,:,2) = zeros(width,height);
+r(:,:,3) = zeros(width,height);
+r = uint8(r);
+subplot(2,2,2), imshow(r);
+title('red component');
+
+g = lena;
+g(:,:,1) = zeros(width,height);
+g(:,:,3) = zeros(width,height);
+g = uint8(g);
+subplot(2,2,3), imshow(g);
+title('green component');
+
+b = lena;
+b(:,:,1) = zeros(width,height);
+b(:,:,2) = zeros(width,height);
+b = uint8(b);
+subplot(2,2,4), imshow(b);
+title('blue component');
+
+figure();
+gray = rgb2gray(lena);
+r = lena(:,:,1);
+g = lena(:,:,2);
+b = lena(:,:,3);
+subplot(1,4,1), imhist(gray), title('gray');
+subplot(1,4,2), imhist(r), title('r');
+subplot(1,4,3), imhist(g), title('g');
+subplot(1,4,4), imhist(b), title('b');
+
+
+
+
