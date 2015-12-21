@@ -44,6 +44,11 @@ subplot(1,4,2), imhist(r), title('r');
 subplot(1,4,3), imhist(g), title('g');
 subplot(1,4,4), imhist(b), title('b');
 
+figure();
+eqGray = histeq(gray);
+subplot(1,2,1), imshow(gray), title('gray');
+subplot(1,2,2), imshow(eqGray), title('EqGray');
+
 
 
 
