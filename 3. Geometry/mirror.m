@@ -1,5 +1,5 @@
 %
-%    Part 2  Geometry
+%    Part 3  Geometry
 %
 
 clear;
