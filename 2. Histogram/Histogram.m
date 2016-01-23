@@ -46,8 +46,11 @@ subplot(1,4,4), imhist(b), title('b');
 
 figure();
 eqGray = histeq(gray);
-subplot(1,2,1), imshow(gray), title('gray');
-subplot(1,2,2), imshow(eqGray), title('EqGray');
+adaptiveEqGray = adapthisteq(gray);
+
+subplot(1,3,1), imshow(gray), title('gray');
+subplot(1,3,2), imshow(eqGray), title('EqGray');
+subplot(1,3,3), imshow(adaptiveEqGray), title('CLAHE');
 
 
 
